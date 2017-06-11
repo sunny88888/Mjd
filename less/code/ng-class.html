@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-class</title>
+    <style type="text/css">
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            transition: background-color 1s ease;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+<!--<select ng-model="style">
+    <option value="red">红色</option>
+    <option value="green">绿色</option>
+</select>
+&lt;!&ndash;<div id="box" ng-class="style"></div>&ndash;&gt;
+<div id="box" ng-class="{red:style=='red',green:style=='green'}"></div>-->
+<input type="text" ng-model="lastname">
+<ul ng-controller="listControl">
+    <li ng-repeat="name in students" ng-class="{red:name.startsWith(lastname)}">{{name}}</li>
+</ul>
+<p><input type="checkbox" ng-model="checked">全选/取消全选</p>
+<ul>
+    <li>选项01<input type="checkbox" ng-checked="checked"></li>
+    <li>选项02<input type="checkbox" ng-checked="checked"></li>
+    <li>选项03<input type="checkbox" ng-checked="checked"></li>
+    <li>选项04<input type="checkbox" ng-checked="checked"></li>
+    <li>选项05<input type="checkbox" ng-checked="checked"></li>
+</ul>
+<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+<script>
+    angular.module("myApp",[])
+        .controller("listControl",[
+            '$scope',
+            function ($scope) {
+                $scope.students = ["张三","王二","李玲玲","胡子","李亚亚","李玲玲"]
+            }
+        ])
+</script>
+</body>
+</html>

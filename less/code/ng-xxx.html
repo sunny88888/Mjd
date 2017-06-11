@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令</title>
+    <link rel="stylesheet" href="bower/bower_components/bootstrap/bootstrap.css">
+</head>
+<body ng-app="demoApp">
+<itcast-button2></itcast-button2>
+<div itcast-button1></div>
+<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+<script>
+    var demoApp = angular.module("demoApp",[]);
+    /*demoApp.controller("democontroller",[
+        '$scope',
+        function ($scope) {
+
+        }
+    ]);*/
+    //指令定义开始，第一个参数是指令名称，第二个参数是数组，数组的最后一个参数是函数
+    demoApp.directive("itcastButton1",[
+        //函数必须要返回一个指令对象
+        function () {
+            return{
+                template:'<input type="button" value="按钮" class="btn btn-lg btn-primary btn-block" />'
+            }
+        }
+    ]);
+    demoApp.directive("itcastButton2",[
+        //函数必须要返回一个指令对象
+        function () {
+            return{
+                template:'<input type="button" value="itcast" class="btn btn-lg btn-danger btn-block">'
+            }
+        }
+    ])
+    
+</script>
+</body>
+</html>

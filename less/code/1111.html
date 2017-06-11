@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+<form name="form1" >
+    <input type="radio" name="radioGroup"/>
+    <input type="radio" name="radioGroup"/>
+    <input type="radio" name="radioGroup"/>
+    <input type="radio"
+           name="radioGroup"/>
+    <input type="radio" name="radioGroup"/>
+    <input type="radio" name="radioGroup"/>
+    <input type="submit"/>
+</form>
+
+<script type="text/javascript">
+
+/*  function outerFun()
+  {
+  a =0;
+  alert(a);
+  }
+  var a=4;
+  outerFun();
+  alert(a);*/
+
+
+/*function Person(){
+    var name = "default";
+
+    return {
+        getName : function(){
+            return name;
+        },
+        setName : function(newName){
+            name = newName;
+        }
+    }
+};
+var john = Person();
+alert(john.getName());
+john.setName("john");
+alert(john.getName());
+var jack = Person();
+alert(jack.getName());
+jack.setName("jack");
+alert(jack.getName());*/
+
+  var bcc = {
+      name : "bcc",
+      foo : function () {
+          alert(this.name);
+      }
+  };
+  bcc.foo();
+  var foo = bcc.foo;
+  foo();
+  name = 'is or not bcc';
+  foo();
+</script>

@@ -1,0 +1,90 @@
+*,::before,::after{
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-box-sizing:border-box;
+}
+body{
+    font-family:"Microsoft Yahei",sans-serif;
+    font-size: 14px;
+    color：#000；
+}
+a{
+    text-decoration:none;
+    color:#000;
+}
+ul{
+    list-style:none;
+}
+input,textarea{
+    border:none;
+    resize:none;//规定为用户可以调整元素的大小
+    outline:none;//元素周围的轮廓线
+    -webkit-appearance:none;//针对在移动端设备中的input或textarea默认的一些效果，比如立体效果
+}
+.clearfix::before,
+.clearfix::after{
+    content:'.';
+    display:block;
+    height:0;
+    line-height: 0;
+    visibility:hidden;
+    clear:both
+}
+[class^="icon_"]{
+    background:  url("../imgs/sprites.png") no-repeat;
+    background-size: 200px 200px;//用于缩放精灵图
+}
+
+/*公用头部*/
+.category-topBar{
+    width: 100%;
+    height: 45px;
+    background: url("../imgs/header-bg.png") repeat-x;
+    background-size: 1px 44px;
+    position: relative;
+    left: 0;
+    top: 0;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 1000;
+    line-height: 45px;
+}
+.category-topBar>.icon_back{
+    display: block;
+    width: 40px;
+    height: 44px;
+    background-position: -20px 0;
+    background-clip: content-box;
+    background-origin: content-box;
+    padding: 12px 13px;
+    float: left;
+    position: absolute;
+}
+.category-topBar>.category-search{
+    display: block;
+    width: 100%;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+.category-topBar>.category-search>input{
+    display: block;
+    width: 100%;
+    height: 32px;
+    border-radius: 5px;
+    line-height: 32px;
+    border: 1px solid #cccccc;
+    margin-top: 6px;
+    padding-left:8px;
+}
+.category-topBar>.icon_menu{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-position: -60px 0;
+    background-clip: content-box;
+    background-origin: content-box;
+    float: right;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+}

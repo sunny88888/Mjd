@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/bootstrap.css">
+</head>
+<body ng-app="demoApp">
+<!--<div ng-btn primary="true" lg block></div>-->
+<btn primary="true" lg block></btn>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    var demoApp = angular.module("demoApp",[]);
+
+    //指令定义开始，第一个参数是指令名称，第二个参数是数组，数组的最后一个参数是函数
+    demoApp.directive("btn",[
+        //函数必须要返回一个指令对象
+        function () {
+            return{
+                scope:{
+                    primay:'@',
+                    lg:'@',
+                    block:'@',
+                },
+                template:'<button class="btn {{primary==\'true\'?\'btn-primary\':\'\'}}">button</button>',
+            }
+        }
+    ])
+
+
+</script>
+</body>
+</html>

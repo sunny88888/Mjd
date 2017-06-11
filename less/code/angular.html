@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定</title>
+    <style>
+        [ng-cloak] {display: none !important;}
+    </style>
+</head>
+<body>
+<!--<div ng-app="myApp" ng-controller="appControl">
+    <p>使用NG实现双边数据绑定</p>
+    <input type="text" placeholder="请输入你的名字" ng-model="user.name">
+    <p ng-cloak>{{user.name}}</p>
+    <input type="button" value="按钮" ng-click="user.show()" ng-cloak>
+    <ul ng-controller="appControl">
+        <li ng-repeat="item in data" data-id="item.id">
+            <span ng-cloak>{{item.name}}</span>
+            <span ng-cloak>{{item.age}}</span>
+        </li>
+    </ul>
+</div>-->
+<div ng-app="ngapp">
+    <div ng-controller="ng-app1"><input type="button" ng-click="dot1()" value="按钮1"></div>
+    <div ng-controller="ng-app2"><input type="button" ng-click="dot2()" value="按钮2"></div>
+</div>
+<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+<script>
+   /* var mokuai=angular.module("myApp",[]);
+    mokuai.controller("appControl",function ($scope) {
+        $scope.user = {};
+        $scope.user.age=23;
+        var age = $scope.user.age;
+//        $scope.user.name = "张三"；
+        $scope.user.show = function () {
+            alert(age);
+        }
+        var data=[
+            {name:"王一",age:"23",id:"01"},
+            {name:"王二",age:"35",id:"02"},
+            {name:"王三",age:"40",id:"03"}
+        ]
+        $scope.data = data;
+
+    });*/
+    var ngapp1 = angular.module("ng-app1",[]);
+    ngapp1.controller("app1",
+        function ($scope) {
+           $scope.dot1 = function () {
+               console.log("11111");
+           }
+        }
+    );
+    var ngapp2 = angular.module("ng-app2",[]);
+    ngapp2.controller("app2",
+        function ($scope) {
+            $scope.dot2 = function () {
+                console.log("22222");
+            }
+        }
+    )
+    var angular = angular.module("ngapp",[ngapp1,ngapp2])
+</script>
+</body>
+</html>

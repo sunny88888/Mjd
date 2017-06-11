@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax请求</title>
+
+</head>
+<body>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+        
+    })
+    $.ajax({
+        type : "get",
+        async : "true",
+        url : "http://v.juhe.cn/weather/index?format=2&cityname=%E8%8B%8F%E5%B7%9E&key=e0440e9934d356edae89ab8e2350dda3",
+        dataType : "jsonp",
+        jsonp:"callback",
+        jsonpCallback : "cb",
+        success : function (data) {
+//            $("#showcontent").html(data.result.today.temperature);
+            var JSONP=document.createElement("script");
+            JSONP.type="text/javascript";
+            JSONP.src="http://localhost:63342/F/jdM/less/code/ajax请求.html??callback=jsonpCallback";
+            document.getElementsByTagName("head")[0].appendChild(JSONP);
+        },
+        error:function(){
+            alert('fail');
+        }
+    })
+</script>
+Result:<div id="showcontent"></div>
+</body>
+</html>
